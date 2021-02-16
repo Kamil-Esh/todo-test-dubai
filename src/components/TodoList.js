@@ -79,16 +79,17 @@ const TodoList = () => {
                     isViewChange ? (
                         <div className='d-flex flex-column'>
                             <label htmlFor="name"></label>
-                            <input type="text" id='name' name='task' placeholder='Название' onChange={handleTask}/>
+                            <input type="text" id='name' required='required' name='task' placeholder='Название' onChange={handleTask}/>
                             <label htmlFor="desc"></label>
-                            <input type="text" id='desc' name='info' placeholder='Описание' onChange={handleTask}/>
+                            <input type="text" id='desc' required='required' name='info' placeholder='Описание' onChange={handleTask}/>
                             <label htmlFor="prior"></label>
-                            <input type="text" id='prior' name='prior' placeholder='Приоритет' onChange={handleTask}/>
+                            <input type="text" id='prior'  required='required' name='prior' placeholder='Приоритет' onChange={handleTask}/>
                             <label htmlFor="project"></label>
-                            <input type="text" id='project' name='project' placeholder='Проект' onChange={handleTask}/>
+                            <input type="text" id='project' required='required' name='project' placeholder='Проект' onChange={handleTask}/>
                             <button
                                 className='btn btn-primary mt-3'
                                 onClick={addTodo}
+                                disabled={Object.keys(task).length === 0}
                             >
                                 Добавить
                             </button>
